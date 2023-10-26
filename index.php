@@ -5,13 +5,6 @@
         <meta name = "keywords" content = "PHP, HTML, Docker">
         <meta name = "description" content = "Wdpai project">
         <meta name = "author" content = "Mateusz Płużek">
-        <style>
-            .DivTest {
-                padding: 5%;
-                text-align: center;
-                font-size: 30px;
-            }
-        </style>
 
     </HEAD>
 
