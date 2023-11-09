@@ -1,0 +1,112 @@
+body {
+    margin: 0px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #2A39C7 0%, #1A1D34 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Inter", Arial;
+    letter-spacing: 0.09em;
+    color: #FFFFFF;
+    font-size: 2.5em;
+    /* margin-bottom: 5px; */
+}
+
+.login-container {
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 40vh;
+
+    padding-bottom: 1em;
+}
+
+.input-field {
+    width: 80%;
+    height: 2em;
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: inset 3px 5px 4px 0 rgb(0, 0, 0, 0.25),
+    0 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    text-align: center;
+    font-family: "Inter", Arial;
+    font-size: 1em;
+}
+
+.input-field::placeholder {
+    font-family: "Inter", Arial;
+    font-size: 1em;
+    letter-spacing: 0.25em;
+    color: #595959;
+}
+
+.standard-button-blue {
+    width: 60%;
+    height: 3em;
+    margin-bottom: 1em;
+
+    border: none;
+    background-color: #3244E0;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    font-family: "Inter", Arial;
+    font-size: 1em;
+    letter-spacing: 0.25em;
+    color: #FFFFFF;
+}
+
+.standard-button-blue:active {
+    background-color: #1a2588;
+}
+
+.sign-in {
+    width: 60%;
+    height: 3em;
+    margin-bottom: 1em;
+
+    border: solid 1px #FFFFFF;
+    background-color: transparent;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    font-family: "Inter", Arial;
+    font-size: 1em;
+    letter-spacing: 0.25em;
+    color: #FFFFFF;
+}
+
+.sign-in:active {
+    background-color: #2d325a;
+}
+
+@media only screen and (max-device-width: 420px) {
+    /* TODO
+    na filmiku wyjaśnione */
+}
