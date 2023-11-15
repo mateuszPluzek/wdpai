@@ -82,10 +82,3 @@
     letter-spacing: 0.25em;
     color: #595959;
 }
-
-@media only screen and (max-device-width: 420px) {
-    .sign-in {
-        width: 80%;
-        border: solid 3px #FFFFFF;
-    }
-}

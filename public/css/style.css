@@ -32,7 +32,7 @@ h1 {
 }
 
 .login-container {
-    width: 50%;
+    width: 70%;
 }
 
 form.login {
@@ -56,7 +56,6 @@ form.login {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
 }
 
 .use-options {
@@ -65,11 +64,15 @@ form.login {
 }
 
 .menu-options {
-    height: 100vh;
+    height: 100%;
     width: 30%;
     text-align: center;
 
     background-color: #2978FF;
+}
+
+form.menu-input {
+    margin-top: 3em;
 }
 
 .menu-options img {
@@ -87,9 +90,9 @@ form.use-input .standard-button-white{
 }
 
 
-@media only screen and (max-device-width: 420px) {
+@media only screen and (max-device-width: 550px) {
     .container {
-        font-size: 36px;
+        font-size: 15px;
     }
     .login-container, .logo {
         width: 100%;
@@ -103,33 +106,42 @@ form.use-input .standard-button-white{
     }
 
     .container-menu {
-        font-size: 36px;
+        font-size: 15px;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .use-options {
         width: 100%;
-        height: 70%;
+        height: 60%;
     }
 
     .menu-options {
         width: 100%;
-        height: 30%;
+        height: 40%;
+        background: transparent;
     }
 
     .menu-options img {
         display: none;
     }
 
-    form.menu-input {
-        margin-top: 3em;
+    form.menu-input .standard-button-white{
+        height: 3.5em;
+        width: 65%;
+        margin-bottom: 4em;
     }
 
     form.use-input {
         margin-top: 15vh;
+    }
+
+    .sign-in {
+        width: 80%;
+        border: solid 3px #FFFFFF;
     }
 }
