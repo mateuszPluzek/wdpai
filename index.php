@@ -1,4 +1,4 @@
-<HTML>
+<!-- <HTML>
     <HEAD>
         <title>Wdpai</title>
         <meta charset = "UTF-8">
@@ -8,15 +8,20 @@
 
     </HEAD>
 
-    <BODY>
-        <div id = "content" class = "DivTest">
-            <b>
-            <?php
-                echo "Hello world"
-            ?>
-            </b>
-        </div>
-    </BODY>
+    <BODY> -->
+        <?php
+            require "Routing.php";
 
-</HTML>
+            $path = trim($_SERVER['REQUEST_URI'], '/');
+            $path = parse_url($path, PHP_URL_PATH);
+
+            Routing::get('index', 'DefaultController');
+            Routing::get('menu', 'DefaultController');
+            
+            Routing::run($path);
+            
+        ?>
+    <!-- </BODY>
+
+</HTML> -->
 
