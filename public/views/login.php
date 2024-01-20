@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <title>Login page</title>
     <link rel = "stylesheet" type = "text/css" href = "public/css/style.css">
@@ -16,11 +15,20 @@
         </div>
 
         <div class = "login-container">
-            <form class = "login">
+            <form class = "login" action="login" method="POST" >
                 <input name = "email" type = "text" placeholder = "email" class = "input-field">
                 <input name = "password" type = "password" placeholder = "password" class = "input-field">
-                <button class = "standard-button-blue">CONTINUE</button>
+                <button class = "standard-button-blue" type = "submit">CONTINUE</button>
                 <button class = "sign-in">CREATE AN ACCOUNT</button>
+                <div class = "error-login">
+                    <?php
+                        if(isset($messages)) {
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                    ?>
+                </div>
             </form>
         </div>
 

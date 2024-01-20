@@ -89,6 +89,13 @@ form.use-input .standard-button-white{
     margin: 2em;
 }
 
+.error-login {
+    font-family: "Inter", Arial;
+    letter-spacing: 0.09em;
+    color: #d01616;
+    font-size: 2.5em;
+    text-align: center;
+}
 
 @media only screen and (max-device-width: 550px) {
     .container {
