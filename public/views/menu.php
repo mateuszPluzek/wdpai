@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <title>Main menu</title>
     <link rel = "stylesheet" type = "text/css" href = "public/css/style.css">
@@ -21,7 +20,7 @@
             <img src = "public/img/logo.svg">
             <form class = "menu-input">
                 <button class = "standard-button-white">Pomoc</button>
-                <button class = "standard-button-white">Ustawienia</button>
+                <button class = "standard-button-white">Moje Dane</button>
                 <button class = "standard-button-blue">LOG OUT</button>
             </form>
         </div>
