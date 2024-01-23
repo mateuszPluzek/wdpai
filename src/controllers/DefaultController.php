@@ -12,6 +12,10 @@ class DefaultController extends AppController {
     public function menu() {
         $this->render('menu');
     }
+
+    public function register() {
+        $this->render('register');
+    }
 }
 
 ?>

@@ -6,7 +6,7 @@
 
     Routing::get('index', 'DefaultController');
     Routing::get('menu', 'DefaultController');
-
+    Routing::get('register', 'DefaultController');
 
     Routing::post('login', 'SecurityController');
 

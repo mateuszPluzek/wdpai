@@ -35,6 +35,10 @@ h1 {
     width: 70%;
 }
 
+.register-container {
+    width: 80%;
+}
+
 form.login {
     display: flex;
     flex-direction: column;
