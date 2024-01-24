@@ -18,6 +18,8 @@
             <input name = "email" type = "text" placeholder = "email" class = "input-field">
             <input name = "password" type = "password" placeholder = "password" class = "input-field">
             <input name = "password_repeat" type = "password" placeholder = "repeat password" class = "input-field">
+            <input name = "name" type = "text" placeholder = "name" class = "input-field">
+            <input name = "surname" type = "text" placeholder = "username" class = "input-field">
             <button class = "standard-button-blue" type = "submit">SIGN UP</button>
             <div class = "error-login">
                 <?php

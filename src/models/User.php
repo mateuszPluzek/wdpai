@@ -4,14 +4,14 @@ namespace models;
 
 class User
 {
+    private $id_user;
     private $email;
     private $password;
-    private $user_type;
     private $salt;
-    private $id_user;
+    private $user_type;
     private $id_user_detail;
 
-    public function __construct(string $email, string $password, string $user_type, string $salt, int $id_user, int $id_user_detail) {
+    public function __construct(int $id_user, string $email, string $password, string $salt, string $user_type, int $id_user_detail) {
         $this->email = $email;
         $this->password = $password;
         $this->user_type = $user_type;
