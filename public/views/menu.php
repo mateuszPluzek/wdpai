@@ -18,9 +18,9 @@
             <img src = "public/img/logo.svg">
             <div class = "menu-input-links">
                 <a class = "button-link-white">Help</a>
-                <a class = "button-link-white">My Data</a>
+                <a class = "button-link-white" href = "/my_data">My Data</a>
             </div>
-            <form class = "menu-input">
+            <form class = "menu-input" action ="logOut" method ="POST">
                 <button class = "standard-button-blue">LOG OUT</button>
             </form>
         </div>

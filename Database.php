@@ -29,7 +29,7 @@ class Database {
             return $connection;
 
         } catch(PDOException $err) {
-            die("connection failed: ".$err);
+            die("connection failed: ".$err->getMessage());
         }
     }
 

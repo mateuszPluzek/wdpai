@@ -21,7 +21,6 @@ class StationRepository extends Repository {
             return null;
         }
         return new Station (
-          $station['id_station'],
           $station['name'],
           $station['code']
         );
@@ -46,9 +45,21 @@ class StationRepository extends Repository {
        $stations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
        foreach($stations as $station) {
-           $results[] = new station($station['id_station'], $station['name'], $station['code']);
+           $results[] = new station($station['name'], $station['code']);
        }
 
        return $results;
+    }
+
+    public function getStationId(Station $station) {
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM stations WHERE code = :code'
+        );
+        $code = $station->getCode();
+        $stmt->bindParam(':code', $code);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data['id_station'];
     }
 }

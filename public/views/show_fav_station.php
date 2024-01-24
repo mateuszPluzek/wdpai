@@ -13,10 +13,10 @@
         </div>
 
         <div class = "stations-container">
-            <form class = "stations-select" action="addFavouriteStation">
-                <select class = "stations">
+            <form class = "stations-select" action="removeFavouriteStation" method = "POST">
+                <select class = "stations" name = "code">
                     <?php foreach($favStations as $favStation) : ?>
-                        <option value = "<?= $favStation->getIdStation();?>"> <?= $favStation->getName() ?> </option>
+                        <option value = "<?= $favStation->getCode().'|'.$favStation->getName() ;?>"> <?= $favStation->getName() ?> </option>
                     <?php endforeach; ?>
                 </select>
                 <button class = button-link-blue type = "submit">Remove from favourites</button>

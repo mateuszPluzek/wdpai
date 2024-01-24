@@ -14,9 +14,9 @@
 
     <div class = "stations-container">
         <form class = "stations-select" action="addFavouriteStation" method = "POST">
-            <select class = "stations" name = "station_id">
+            <select class = "stations" name = "code">
                 <?php foreach($stations as $station) : ?>
-                    <option value = "<?= $station->getIdStation();?>"> <?= $station->getName() ?> </option>
+                    <option value = "<?= $station->getCode().'|'.$station->getName() ;?>"> <?= $station->getName() ?> </option>
                 <?php endforeach; ?>
             </select>
             <button class = button-link-blue type = "submit">Add to favourites</button>

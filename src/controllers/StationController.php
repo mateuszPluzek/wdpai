@@ -1,10 +1,13 @@
 <?php
 
+use models\FavStation;
 use repository\StationRepository;
 use repository\FavStationRepository;
+use models\Station;
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Station.php';
+require_once __DIR__.'/../models/FavStation.php';
 require_once __DIR__."/../repository/StationRepository.php";
 require_once __DIR__."/../repository/FavStationRepository.php";
 
@@ -27,7 +30,7 @@ class StationController extends AppController {
     }
 //TODO current logged user
     public function show_fav_station() {
-        $favStations = $this->favStationRepository->getFavStations(4);
+        $favStations = $this->favStationRepository->getFavStations($_COOKIE['session_id']);
         $this->render('show_fav_station', ['favStations' => $favStations]);
     }
 
@@ -38,22 +41,37 @@ class StationController extends AppController {
 //
     public function addFavouriteStation() {
 
+        list($code, $name) = explode('|', $_POST['code']);
+        $id = $this->stationRepository->getStationId(new Station($name, $code));
+        $this->favStationRepository->addFavStation(new FavStation($id, $_COOKIE['session_id']));
+
         if($this->isPost()) {
             return $this->render('show_station', ['messages' => ["Added station to favourites"],
                 'stations' => $this->stationRepository->getStations()]);
         }
 
-        $id_station = $_POST["station_id"];
-        $this->favStationRepository->addFavStation(4, $id_station);
+        exit();
+    }
+
+    public function removeFavouriteStation() {
+        if(!$_POST['code']) {
+            return $this->render('show_fav_station', ['messages' => ["Removed station"],
+                'favStations' => $this->favStationRepository->getFavStations($_COOKIE['session_id'])]);
+        }
+
+        list($code, $name) = explode('|', $_POST['code']);
+        $id = $this->stationRepository->getStationId(new Station($name, $code));
+        $this->favStationRepository->removeFavStation(new FavStation($id, $_COOKIE['session_id']));
+
+        if($this->isPost()) {
+            return $this->render('show_fav_station', ['messages' => ["Removed station"],
+                'favStations' => $this->favStationRepository->getFavStations($_COOKIE['session_id'])]);
+        }
+
+        exit();
+
     }
 
 
 }
-
-
-
-
-
-
 ?>
-

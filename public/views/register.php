@@ -3,6 +3,7 @@
     <title>Register page</title>
     <link rel = "stylesheet" type = "text/css" href = "public/css/style.css">
     <link rel = "stylesheet" type = "text/css" href = "public/css/buttons.css">
+    <script type = "text/javascript" src="public/js/script.js" defer></script>
 
 </head>
 
@@ -14,7 +15,7 @@
     </div>
 
     <div class = "register-container">
-        <form class = "login" action="register" method="POST" >
+        <form class = "login" action="registerUser" method="POST" >
             <input name = "email" type = "text" placeholder = "email" class = "input-field">
             <input name = "password" type = "password" placeholder = "password" class = "input-field">
             <input name = "password_repeat" type = "password" placeholder = "repeat password" class = "input-field">

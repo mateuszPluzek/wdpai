@@ -152,3 +152,20 @@
 
     padding: 2em;
 }
+
+.no-valid {
+    width: 80%;
+    height: 2em;
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+
+    border: 2px solid #fa2020;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: inset 3px 5px 4px 0 rgb(0, 0, 0, 0.25),
+    0 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    text-align: center;
+    font-family: "Inter", Arial;
+    font-size: 1em;
+}

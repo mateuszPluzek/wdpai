@@ -15,7 +15,7 @@
         </div>
 
         <div class = "login-container">
-            <form class = "login" action="login" method="POST" >
+            <form class = "login" action="loginUser" method="POST" >
                 <input name = "email" type = "text" placeholder = "email" class = "input-field">
                 <input name = "password" type = "password" placeholder = "password" class = "input-field">
                 <button class = "standard-button-blue" type = "submit" >CONTINUE</button>

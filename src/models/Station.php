@@ -3,20 +3,13 @@
 namespace models;
 
 class Station {
-    private $id_station;
     private $name;
     private $code;
 
-    public function __construct($id_station, $name, $code)
+    public function __construct(string $name, string $code)
     {
-        $this->id_station = $id_station;
         $this->name = $name;
         $this->code = $code;
-    }
-
-    public function getIdStation()
-    {
-        return $this->id_station;
     }
 
     public function getName()
