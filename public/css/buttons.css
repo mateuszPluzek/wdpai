@@ -15,6 +15,48 @@
     color: #484848;
 }
 
+.button-link-white {
+    width: 70%;
+    height: 3em;
+    margin-bottom: 1.5em;
+
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    font-family: "Inter", Arial;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    color: #484848;
+    text-align:center;
+    padding: 0.5em;
+    line-height: 3em;
+
+    text-decoration: none;
+}
+
+.button-link-blue {
+    width: 70%;
+    height: 3em;
+    margin-bottom: 1.5em;
+
+    border: none;
+    background-color: #3244E0;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    font-family: "Inter", Arial;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    color: #FFFFFF;
+    text-align:center;
+    padding: 0.5em;
+    line-height: 3em;
+
+    text-decoration: none;
+}
+
 .standard-button-white:active {
     background-color: #b9b9b9;
 }
@@ -53,6 +95,10 @@
     font-size: 1em;
     letter-spacing: 0.25em;
     color: #FFFFFF;
+
+    text-align: center;
+    padding:0.25em;
+    line-height: 3em;
 }
 
 .sign-in:active {
@@ -81,4 +127,28 @@
     font-size: 1em;
     letter-spacing: 0.25em;
     color: #595959;
+}
+
+.button-link-white:active {
+    background-color: #b9b9b9;
+}
+
+.button-link-blue:active {
+    background-color: #1a2588;
+}
+
+.stations {
+    width: 30vw;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: none;
+
+    border-radius: 20px;
+    box-shadow: inset 3px 5px 4px 0 rgb(0, 0, 0, 0.25),
+    0 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    font-family: "Inter", Arial;
+    font-size: 1em;
+
+    padding: 2em;
 }

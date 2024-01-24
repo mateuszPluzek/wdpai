@@ -9,18 +9,18 @@
 <body>
     <div class = "container-menu">
         <div class = "use-options">
-            <form class = "use-input">
-                <button class = "standard-button-white">Search lines</button>
-                <button class = "standard-button-white">Search stations</button>
-                <button class = "standard-button-white">Favorite stations</button>
-            </form>
+            <a class = "button-link-white">Search lines</a>
+            <a href = "/show_station" class = "button-link-white">Search stations</a>
+            <a href = "/show_fav_station" class = "button-link-white">Favorite stations</a>
         </div>
         
         <div class = "menu-options">
             <img src = "public/img/logo.svg">
+            <div class = "menu-input-links">
+                <a class = "button-link-white">Help</a>
+                <a class = "button-link-white">My Data</a>
+            </div>
             <form class = "menu-input">
-                <button class = "standard-button-white">Help</button>
-                <button class = "standard-button-white">My Data</button>
                 <button class = "standard-button-blue">LOG OUT</button>
             </form>
         </div>

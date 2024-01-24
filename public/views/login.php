@@ -18,8 +18,8 @@
             <form class = "login" action="login" method="POST" >
                 <input name = "email" type = "text" placeholder = "email" class = "input-field">
                 <input name = "password" type = "password" placeholder = "password" class = "input-field">
-                <button class = "standard-button-blue" type = "submit">CONTINUE</button>
-                <button class = "sign-in">CREATE AN ACCOUNT</button>
+                <button class = "standard-button-blue" type = "submit" >CONTINUE</button>
+                <a href = "/register" class = "sign-in">CREATE AN ACCOUNT</a>
                 <div class = "error-login">
                     <?php
                         if(isset($messages)) {
@@ -33,5 +33,6 @@
         </div>
 
     </div>
+
 
 </body>
