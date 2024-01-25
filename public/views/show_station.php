@@ -19,7 +19,7 @@
                     <option value = "<?= $station->getCode().'|'.$station->getName() ;?>"> <?= $station->getName() ?> </option>
                 <?php endforeach; ?>
             </select>
-            <button class = button-link-blue type = "submit">Add to favourites</button>
+            <button class = "standard-button-blue" type = "submit">Add to favourites</button>
         </form>
     </div>
 

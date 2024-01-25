@@ -1,4 +1,7 @@
 <?php
+
+use repository\UserRepository;
+
 require_once 'AppController.php';
 
 
@@ -6,15 +9,15 @@ class DefaultController extends AppController {
 
 
     public function menu() {
-        $this->render('menu');
+        $tester = new UserRepository();
+        if($tester->isAdmin($_COOKIE['session_id']))
+            $this->render('admin_menu');
+        else
+            $this->render('menu');
     }
 
     public function register() {
         $this->render('register');
-    }
-
-    public function my_data() {
-        $this->render('my_data');
     }
 }
 

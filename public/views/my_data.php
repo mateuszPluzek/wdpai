@@ -11,22 +11,34 @@
 
         <div class = "data">
             <p>Name</p>
-            <div class = "show-data">
-
-            </div>
+            <p class = "show-data">
+                <?php
+                    if(isset($user_data)) {
+                        echo $user_data[0];
+                    }
+                ?>
+            </p>
             <p>Surname</p>
-            <div class = "show-data">
-
-            </div>
+            <p class = "show-data">
+                <?php
+                    if(isset($user_data)) {
+                    echo $user_data[1];
+                    }
+                ?>
+            </p>
         </div>
         <div class = "data">
             <p>Email</p>
-            <div class = "show-data">
-
-            </div>
+            <p class = "show-data">
+                <?php
+                    if(isset($user_data)) {
+                    echo $user_data[2];
+                    }
+                ?>
+            </p>
         </div>
         <div class = "data">
-            <form class = "change-name" action = "" type="POST">
+            <form class = "change-name" action = "alterUser" method="POST">
                 <input class = "input-field", type = "text", name = "newName", placeholder = "new name">
                 <input class = "input-field", type = "text", name = "newSurname", placeholder="new surname">
                 <button type="submit" class = "standard-button-blue">SUBMIT</button>

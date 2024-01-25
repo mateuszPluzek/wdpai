@@ -169,3 +169,21 @@
     font-family: "Inter", Arial;
     font-size: 1em;
 }
+
+.show-data {
+    width: 80%;
+    height: 2em;
+
+    border: none;
+    background-color: #FFFFFF;
+    box-shadow: inset 3px 5px 4px 0 rgb(0, 0, 0, 0.25),
+    0 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+    text-align: center;
+    font-family: "Inter", Arial;
+    font-size: 1em;
+    color: black;
+
+    padding-top: 1em;
+
+}

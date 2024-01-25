@@ -32,6 +32,28 @@ class UserRepository extends Repository {
         );
     }
 
+    public function getUserWithId(int $id) {
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM users NATURAL JOIN user_details WHERE id_user = :id_user'
+        );
+        $stmt->bindParam(':id_user', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($user == false) {
+            return null;
+        }
+
+        return new User(
+            $user['email'],
+            $user['password'],
+            $user['user_type'],
+            $user['name'],
+            $user['surname']
+        );
+    }
+
     public function getUserDetailsId(User $user) {
         $stmt = $this->database->connect()->prepare(
             'SELECT * FROM user_details WHERE name = :name AND surname = :surname'
@@ -89,5 +111,23 @@ class UserRepository extends Repository {
 
     }
 
+    public function alterDetails( int $id, string $name = "", string $surname = "") {
+        $stmt = $this->database->connect()->prepare(
+            'UPDATE user_details SET name = :name, surname = :surname WHERE id_user_detail = :id_user'
+        );
+
+        $stmt->bindParam(':id_user', $id);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':surname', $surname);
+        $stmt->execute();
+    }
+
+    public function isAdmin(int $id) {
+        $user = $this->getUserWithId($id);
+        if($user->getUserType() === 'admin') {
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -26,14 +26,29 @@ class StationRepository extends Repository {
         );
     }
 
-    public function addStation(Station $station) {
+    public function deleteStation(string $code) {
         $stmt = $this->database->connect()->prepare(
-            'INSERT INTO stations (name, code) VALUES (?, ?)'
+            'DELETE FROM stations WHERE code = :code'
         );
-        $stmt->execute([
-           $station->getName(),
-           $station->getCode()
-        ]);
+        $stmt->bindParam(':code', $code, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    public function addStation(Station $station) {
+        try {
+            $pdo = $this->database->connect();
+            $pdo->beginTransaction();
+            $stmt = $pdo->prepare(
+                'INSERT INTO stations (name, code) VALUES (?, ?)'
+            );
+            $stmt->execute([
+                $station->getName(),
+                $station->getCode()
+            ]);
+            $pdo->commit();
+        } catch(Exception $e) {
+//            TODO obsługa błędów
+        }
     }
 
     public function getStations() {
@@ -45,7 +60,7 @@ class StationRepository extends Repository {
        $stations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
        foreach($stations as $station) {
-           $results[] = new station($station['name'], $station['code']);
+           $results[] = new Station($station['name'], $station['code']);
        }
 
        return $results;

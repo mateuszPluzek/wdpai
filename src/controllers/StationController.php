@@ -28,17 +28,11 @@ class StationController extends AppController {
         $stations = $this->stationRepository->getStations();
         $this->render('show_station', ['stations' => $stations]);
     }
-//TODO current logged user
     public function show_fav_station() {
         $favStations = $this->favStationRepository->getFavStations($_COOKIE['session_id']);
         $this->render('show_fav_station', ['favStations' => $favStations]);
     }
 
-//    public function addStation() {
-//        if($this->isPost());
-//    }
-//TODO current logged user
-//
     public function addFavouriteStation() {
 
         list($code, $name) = explode('|', $_POST['code']);
