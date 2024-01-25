@@ -77,4 +77,15 @@ class StationRepository extends Repository {
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['id_station'];
     }
+
+    public function getStationIdWithCode(string $code) {
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM stations WHERE code = :code'
+        );
+        $stmt->bindParam(':code', $code);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data['id_station'];
+    }
 }

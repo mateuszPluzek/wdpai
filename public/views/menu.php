@@ -9,7 +9,7 @@
 <body>
     <div class = "container-menu">
         <div class = "use-options">
-            <a class = "button-link-white">Search connection</a>
+            <a href = "/show_lines" class = "button-link-white">Search connection</a>
             <a href = "/show_station" class = "button-link-white">Search stations</a>
             <a href = "/show_fav_station" class = "button-link-white">Favorite stations</a>
         </div>

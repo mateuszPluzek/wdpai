@@ -2,10 +2,12 @@
 
 use models\Station;
 use models\Operator;
+use models\StationRoute;
 use models\Train;
 use repository\OperatorRepository;
 use repository\RouteRepository;
 use repository\StationRepository;
+use repository\StationRouteRepository;
 use repository\TrainRepository;
 use repository\UserRepository;
 
@@ -13,8 +15,10 @@ require_once 'AppController.php';
 require_once __DIR__.'/../repository/TrainRepository.php';
 require_once __DIR__.'/../repository/OperatorRepository.php';
 require_once __DIR__.'/../repository/RouteRepository.php';
+require_once __DIR__.'/../repository/StationRouteRepository.php';
 require_once __DIR__.'/../models/Train.php';
 require_once __DIR__.'/../models/Route.php';
+require_once __DIR__.'/../models/StationRoute.php';
 
 
 class AdminController extends AppController {
@@ -23,6 +27,7 @@ class AdminController extends AppController {
     private $trainRepository;
     private $operatorRepository;
     private $routeRepository;
+    private $stationRouteRepository;
 
     public function __construct()
     {
@@ -31,6 +36,7 @@ class AdminController extends AppController {
         $this->trainRepository = new TrainRepository();
         $this->operatorRepository = new OperatorRepository();
         $this->routeRepository = new RouteRepository();
+        $this->stationRouteRepository = new StationRouteRepository();
     }
     public function admin_input() {
         $tester = new UserRepository();
@@ -53,6 +59,9 @@ class AdminController extends AppController {
             'trains' => $trains,
             'routes' => $routes
         ]);
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: $url/admin_input");
+        exit();
     }
 
     public function addStation() {
@@ -104,6 +113,25 @@ class AdminController extends AppController {
     public function delRoute() {
         $code = $_POST['routeCode'];
         $this->routeRepository->deleteRoute($code);
+
+        $this->rend();
+    }
+
+    public function addStationRoute() {
+        $code = $_POST['code'];
+        $codeNext = $_POST['codeNext'];
+        $routeCode = $_POST['routeCode'];
+        $id_station = $this->stationRepository->getStationIdWithCode($code);
+        $id_next_station = $this->stationRepository->getStationIdWithCode($codeNext);
+        $id_route = $this->routeRepository->getRouteId($routeCode);
+        $route_order = $_POST['order'];
+        $arrival = $_POST['arr'];
+        $departure = $_POST['dep'];
+
+
+        $stationRoute = new StationRoute($id_station, $id_next_station, $id_route, $route_order, $arrival, $departure);
+
+        $this->stationRouteRepository->addStationRoute($stationRoute);
 
         $this->rend();
     }

@@ -46,11 +46,26 @@
         </div>
 
         <div class = 'corner' id = 'bot-left'>
-            <form class = "route-station-add">
-
-            </form>
-            <form class = "route-station-del">
-
+            <form class = "route-station-add" action ="addStationRoute" method="POST">
+                <select class = "stations" name = "code">
+                    <?php foreach($stations as $station) : ?>
+                        <option value = "<?= $station->getCode();?>"> <?= $station->getName() ?> </option>
+                    <?php endforeach; ?>
+                </select>
+                <select class = "stations" name = "codeNext">
+                    <?php foreach($stations as $station) : ?>
+                        <option value = "<?= $station->getCode();?>"> <?= $station->getName() ?> </option>
+                    <?php endforeach; ?>
+                </select>
+                <select class = "stations" name = "routeCode">
+                    <?php foreach($routes as $route) : ?>
+                        <option value = "<?= $route->getCode();?>"> <?= $route->getCode() ?> </option>
+                    <?php endforeach; ?>
+                </select>
+                <input class = "input-field" name = "order" type = "number" placeholder="station order">
+                <input class = "input-field" name = "arr" type = "time" placeholder="arrival">
+                <input class = "input-field" name = "dep" type = "time" placeholder="departure">
+                <button class = "standard-button-blue" type = "submit">Add</button>
             </form>
         </div>
 
