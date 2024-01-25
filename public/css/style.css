@@ -373,22 +373,28 @@ form.menu-input {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 1.75em;
+
 }
 .top .login select{
     padding: 0.5em;
 }
-
-.top .input-field {
-    padding: 1.5em;
-    width: 20%;
-    margin-top: 0.5em;
+.top button {
+    margin-top: 1em;
 }
-
 
 .mid {
     width: 100%;
     height: 50%;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+    /*padding-top: 5em;*/
+
+    Display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .bot {
     width: 100%;
@@ -396,7 +402,25 @@ form.menu-input {
 
     text-align: center;
 }
+.train-info {
+    width: 30%;
+    height: 45%;
+    margin: 1em;
 
+    background-color: #FFFFFF;
+    border-radius: 20px;
+
+    Display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+.train-info p {
+    color: black;
+    font-size: 0.8em;
+    padding: 0;
+}
 
 
 /*MEDIA QUERY*/

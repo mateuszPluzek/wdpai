@@ -27,6 +27,7 @@
     Routing::post('addRoute', 'AdminController');
     Routing::post('delRoute', 'AdminController');
     Routing::post('addStationRoute', 'AdminController');
+    Routing::post('showConnections', 'ConnectionController');
 
 
     Routing::run($path);

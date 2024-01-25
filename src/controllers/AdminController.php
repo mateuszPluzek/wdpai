@@ -59,9 +59,6 @@ class AdminController extends AppController {
             'trains' => $trains,
             'routes' => $routes
         ]);
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: $url/admin_input");
-        exit();
     }
 
     public function addStation() {

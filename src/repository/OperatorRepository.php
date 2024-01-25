@@ -25,4 +25,16 @@ class OperatorRepository extends Repository{
         return $results;
     }
 
+    public function getOperator($id) {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM operators WHERE id_operator = :id_operator
+        ');
+        $stmt->bindParam(':id_operator', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $info = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return new Operator($info['id_operator'], $info['name']);
+    }
+
 }

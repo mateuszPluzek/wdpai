@@ -9,11 +9,11 @@ require_once "Repository.php";
 require_once __DIR__."/../models/Station.php";
 class StationRepository extends Repository {
 
-    public function getStation(string $name) {
+    public function getStation(string $code) {
         $stmt = $this->database->connect()->prepare(
-            'SELECT * FROM stations WHERE name = :name'
+            'SELECT * FROM stations WHERE code = :code'
         );
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':code', $code, PDO::PARAM_STR);
         $stmt->execute();
 
         $station = $stmt->fetch(PDO::FETCH_ASSOC);

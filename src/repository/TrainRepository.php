@@ -55,5 +55,16 @@ class TrainRepository extends Repository{
 
         return $train['id_train'];
     }
+    public function getTrain($id) {
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM trains WHERE id_train = :id_train'
+        );
+        $stmt->bindParam(':id_train', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $train = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return new Train($train['id_operator'], $train['name'], $train['number']);
+    }
 
 }

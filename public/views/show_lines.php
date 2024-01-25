@@ -9,8 +9,7 @@
 <body>
     <div class = "container-connections">
         <div class = "top">
-            <form class = "login" action ="" method="POST">
-                <p>FROM</p>
+            <form class = "login" action ="showConnections" method="POST">
                 <select class = "stations" name = "code">
                     <?php foreach($favStations as $favStation) : ?>
                         <option value = "<?= $favStation->getCode() ;?>"> <?= $favStation->getName() ?> </option>
@@ -30,13 +29,24 @@
                         <option value = "<?= $station->getCode() ;?>"> <?= $station->getName() ?> </option>
                     <?php endforeach; ?>
                 </select>
-                <input type = "time" name = "time" class = "input-field">
                 <button class = "standard-button-blue" type = "submit">Show connections</button>
             </form>
         </div>
 
-        <div class = "mid">
 
+        <div class = "mid">
+            <?php if(isset($routesStart)) for($i = 0; $i < count($routesStart); $i++) :?>
+            <?php
+                if($distances[$i] < 0)
+                    continue;
+                $word = $distances[$i] == 1 ? " stacja" : " stacji";
+            ?>
+            <div class = "train-info">
+                <b><p><?= $stationNames[0]; ?> <?= $routesStart[$i]->getDepartureTime() ?></p></b>
+                <p><?= $distances[$i].$word?> <?= $trains[$i]->getName()."-".$trains[$i]->getNumber()?> <?= $operators[$i]->getName()?></p>
+                <b><p><?= $stationNames[1]; ?> <?= $routesEnd[$i]->getDepartureTime() ?></p></b>
+            </div>
+            <?php endfor; ?>
         </div>
 
         <div class = "bot">

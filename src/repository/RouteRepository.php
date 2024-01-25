@@ -53,4 +53,16 @@ class RouteRepository extends Repository {
 
         return $train['id_route'];
     }
+
+    public function getRoute($id) {
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM routes WHERE id_route = :id'
+        );
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $train = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $train['id_train'];
+    }
 }
